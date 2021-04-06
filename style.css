@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/**declaring variables**/
+:root{
+  --background-color: #fff;
+  --text-color: #000;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --cardbackgrond-color:  hsl(0, 0%, 98%)
+
+}
+.dark:root{
+  --background-color: hsl(207, 26%, 17%);
+  --text-color: #fff;
+  --cardbackground-color: hsl(209, 23%, 22%);
+}
+body{
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.nav{
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 10px;
+  width: 100%;
+}
+#moon{
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 30px;
+}
+ul{
+  display: grid;
+  grid-template-columns: repeat(4,2fr);
+}
+li{
+    list-style: none;
+}
+/**styling for the top b4 the cards*/
+#input{
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid  var( --background-color);
+   transition: 0.5s;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  outline: none;
+  background-color: var( --background-color);
+  margin-left: 10px;
+}
+input[type=text] {
+  width: 100px;
+  transition: ease-in-out, width .35s ease-in-out;
+}
+.in{
+  position: relative;
+  left: 50px;
+  z-index: 1;
+
+}
+/**added class*/
+  
+#button{
+
+  width: 20%;
+  padding: 5px 10px;
+  background-color: var( --background-color);
+  border: 3px solid  var( --background-color) ;
+  color: var(--text-color);
+   transition: 0.5s;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  outline: none;
+  margin-right:20px;
+  float: right;
+  position: relative;
+  top: -50px;
+}
+img{
+  width: 230px;
+  height: 200px;
+}
+#switch{
+width: 30px;
+height: 30px;
+cursor: pointer;
+color: var(--text-color);
+}
+#card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 7px var(--shadow-color);
+    transition: 0.3s;
+    width: 230px;
+    height: 350px;
+    background-color: var( --cardbackground-color);
+    color: var(--text-color);
+    margin-top:3rem;
+    text-align:start;
+    margin-left: 30px;
+  }
+  a{
+    color: var(--text-color);
+    text-decoration: none;
+  }
+   h2{
+    color: var(--text-color);
+  }
+  p{
+    color: var(--text-color);
+  }
+  /* On mouse-over, add a deeper shadow */
+  #card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+/****slider***/
+.label{
+  background-color: #111;
+  height: 26px;
+  width: 50px;
+  border-radius: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+
+}
+.checkbox{
+  opacity: 0;
+  position: absolute;
+}
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+.ball{
+  width: 22px;
+  height: 22px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+  display: none;
+}
+.fa-moon{
+  color: #f1c4af;
+}
+.fa-sun{
+  color: #f39c12;
+}
+/**end of slider*/
+  /*countries.html styles */
+  
+  /**mediaquery*/
+
+  @media screen and (max-width: 480px) {
+    ul{
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      margin-left: 3rem;
+    }
+    #input{
+      width: 90%;
+    }
+    #button{
+      position: relative;
+      top: 5px;
+      width: 50%;
+      margin-right: 8rem;
+    }
+  }
